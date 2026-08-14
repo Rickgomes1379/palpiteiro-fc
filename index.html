@@ -1,1 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Palpiteiro FC</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 18px 30px;
+    }
+
+    .menu {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #166534;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: #0f172a;
+      color: white;
+      padding: 80px 30px;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 50px;
+      max-width: 650px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      font-size: 18px;
+      max-width: 650px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .botao {
+      display: inline-block;
+      background: #16a34a;
+      color: white;
+      padding: 14px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 50px 30px;
+    }
+
+    .titulo {
+      margin-bottom: 25px;
+    }
+
+    .titulo h2 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .titulo p {
+      color: #64748b;
+    }
+
+    .jogos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .campeonato {
+      color: #166534;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .data {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .times {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .time {
+      width: 40%;
+      font-weight: bold;
+    }
+
+    .escudo {
+      display: block;
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .versus {
+      font-weight: bold;
+      color: #64748b;
+    }
+
+    .palpite {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .palpite input {
+      width: 55px;
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #cbd5e1;
+      border-radius: 7px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .ranking {
+      margin-top: 60px;
+    }
+
+    .tabela {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .tabela th,
+    .tabela td {
+      padding: 15px;
+      border-bottom: 1px solid #e2e8f0;
+      text-align: left;
+    }
+
+    .tabela th {
+      background: #0f172a;
+      color: white;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      padding: 30px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .jogos {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="menu">
+
+      <div class="logo">
+        ⚽ PALPITEIRO FC
+      </div>
+
+      <nav>
+        <a href="#">Início</a>
+        <a href="#jogos">Jogos</a>
+        <a href="#ranking">Ranking</a>
+        <a href="#tabela">Tabela</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        Mostre que você entende de futebol.
+      </h1>
+
+      <p>
+        Dê seus palpites nos jogos do Brasileirão e da Copa do Brasil,
+        acumule pontos e dispute o ranking dos melhores palpiteiros.
+      </p>
+
+      <a href="#jogos" class="botao">
+        Começar a palpitar
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <main>
+
+    <section id="jogos">
+
+      <div class="titulo">
+
+        <h2>⚽ Próximos jogos</h2>
+
+        <p>
+          Escolha uma partida e informe o placar que você acredita que vai acontecer.
+        </p>
+
+      </div>
+
+
+      <div class="jogos">
+
+
+        <div class="card">
+
+          <div class="campeonato">
+            Brasileirão
+          </div>
+
+          <div class="data">
+            Sábado • 18:30
+          </div>
+
+          <div class="times">
+
+            <div class="time">
+              <span class="escudo">🔴</span>
+              Flamengo
+            </div>
+
+            <div class="versus">
+              ×
+            </div>
+
+            <div class="time">
+              <span class="escudo">🟢</span>
+              Palmeiras
+            </div>
+
+          </div>
+
+          <div class="palpite">
+
+            <p>Seu palpite</p>
+
+            <br>
+
+            <input type="number" min="0" placeholder="0">
+
+            ×
+
+            <input type="number" min="0" placeholder="0">
+
+            <br><br>
+
+            <button class="botao">
+              Confirmar palpite
+            </button>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+          <div class="campeonato">
+            Brasileirão
+          </div>
+
+          <div class="data">
+            Domingo • 16:00
+          </div>
+
+          <div class="times">
+
+            <div class="time">
+              <span class="escudo">🔵</span>
+              Bahia
+            </div>
+
+            <div class="versus">
+              ×
+            </div>
+
+            <div class="time">
+              <span class="escudo">⚫</span>
+              Corinthians
+            </div>
+
+          </div>
+
+          <div class="palpite">
+
+            <p>Seu palpite</p>
+
+            <br>
+
+            <input type="number" min="0" placeholder="0">
+
+            ×
+
+            <input type="number" min="0" placeholder="0">
+
+            <br><br>
+
+            <button class="botao">
+              Confirmar palpite
+            </button>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+          <div class="campeonato">
+            Brasileirão
+          </div>
+
+          <div class="data">
+            Domingo • 18:30
+          </div>
+
+          <div class="times">
+
+            <div class="time">
+              <span class="escudo">⚫</span>
+              Botafogo
+            </div>
+
+            <div class="versus">
+              ×
+            </div>
+
+            <div class="time">
+              <span class="escudo">🔴</span>
+              São Paulo
+            </div>
+
+          </div>
+
+          <div class="palpite">
+
+            <p>Seu palpite</p>
+
+            <br>
+
+            <input type="number" min="0" placeholder="0">
+
+            ×
+
+            <input type="number" min="0" placeholder="0">
+
+            <br><br>
+
+            <button class="botao">
+              Confirmar palpite
+            </button>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <section class="ranking" id="ranking">
+
+      <div class="titulo">
+
+        <h2>🏆 TOP 10 Palpiteiros</h2>
+
+        <p>
+          Os melhores jogadores da plataforma.
+        </p>
+
+      </div>
+
+
+      <table class="tabela">
+
+        <thead>
+
+          <tr>
+            <th>#</th>
+            <th>Palpiteiro</th>
+            <th>Pontos</th>
+            <th>Vitórias</th>
+            <th>Derrotas</th>
+          </tr>
+
+        </thead>
+
+
+        <tbody>
+
+          <tr>
+            <td>🥇 1</td>
+            <td>JoãoFC</td>
+            <td>58</td>
+            <td>18</td>
+            <td>5</td>
+          </tr>
+
+          <tr>
+            <td>🥈 2</td>
+            <td>ReiFC</td>
+            <td>54</td>
+            <td>17</td>
+            <td>6</td>
+          </tr>
+
+          <tr>
+            <td>🥉 3</td>
+            <td>Bahia10</td>
+            <td>51</td>
+            <td>16</td>
+            <td>7</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>CraqueFC</td>
+            <td>47</td>
+            <td>15</td>
+            <td>8</td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td>Futebol10</td>
+            <td>44</td>
+            <td>14</td>
+            <td>9</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </section>
+
+
+
+    <section id="tabela" class="ranking">
+
+      <div class="titulo">
+
+        <h2>📊 Tabela do Brasileirão</h2>
+
+        <p>
+          Classificação atual do campeonato.
+        </p>
+
+      </div>
+
+
+      <table class="tabela">
+
+        <thead>
+
+          <tr>
+            <th>#</th>
+            <th>Time</th>
+            <th>Pts</th>
+            <th>J</th>
+            <th>V</th>
+            <th>E</th>
+            <th>D</th>
+            <th>SG</th>
+          </tr>
+
+        </thead>
+
+
+        <tbody>
+
+          <tr>
+            <td>1</td>
+            <td>Flamengo</td>
+            <td>42</td>
+            <td>20</td>
+            <td>13</td>
+            <td>3</td>
+            <td>4</td>
+            <td>+17</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Palmeiras</td>
+            <td>40</td>
+            <td>20</td>
+            <td>12</td>
+            <td>4</td>
+            <td>4</td>
+            <td>+13</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Bahia</td>
+            <td>37</td>
+            <td>20</td>
+            <td>11</td>
+            <td>4</td>
+            <td>5</td>
+            <td>+8</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    ⚽ PALPITEIRO FC — Palpites de futebol, sem apostas.
+  </footer>
+
+</body>
+</html>
